@@ -22,11 +22,19 @@ export function insertItem(array, item, index) {
 }
 
 // Immutably replace an item at a specific position/index within an array
-export function replaceItem(array, item, index) {}
+export function replaceItem(array, item, index) {
+    const newArray = [...array.slice(0, index),
+    item,
+...array.slice(index+1)]
+return newArray
+}
 
 // Immutably remove an item at a specific position/index within an array
-export function removeItem(array, index) {}
-
+export function removeItem(array, index) {
+  const  newArray = [...array.slice(0, index),
+  ...array.slice(index+1)]
+  return newArray
+}
 //Objects:
 
 // Immutably update the object so that the value under the "name" property becomes the new name
